@@ -24,6 +24,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        return response()->json($request, Response::HTTP_OK);
     }
 
     /**
@@ -32,6 +33,7 @@ class UserController extends Controller
     public function show(string $id)
     {
         //
+        return response()->json("This is the thing you input: " . $id, Response::HTTP_OK);
     }
 
     /**
@@ -40,6 +42,8 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        return response()->json($request . " - " . $id,Response::HTTP_OK);
+
     }
 
     /**
@@ -48,5 +52,6 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+        return response()->json("destroy " . $id ,Response::HTTP_OK);
     }
 }
